@@ -1,9 +1,9 @@
 node {
   stage('build & deploy') {
-    openshiftBuild bldCfg: 'hellopythonapp',
+    openshiftBuild bldCfg: 'pipeline-simple',
       namespace: 'idey-cicd-development',
       showBuildLogs: 'true'
-    openshiftVerifyDeployment depCfg: 'hellopythonapp',
+    openshiftVerifyDeployment depCfg: 'pipeline-simple',
       namespace: 'idey-cicd-development'
   }
   stage('approval (test)') {
